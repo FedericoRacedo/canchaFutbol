@@ -18,7 +18,7 @@
   position: absolute;
   cursor: grab;
   text-align: center;
-  transform: translate(-50%, -50%cd);
+  transform: translate(-50%, -50%);
 }
 
 .player img {
@@ -58,4 +58,56 @@
   border-radius: 30%;
   object-fit: cover;
   margin-bottom: 10px;
+}
+
+/* Celulares (pantallas hasta 600px) */
+@media (max-width: 600px) {
+  .player img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .player span {
+    font-size: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-content img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Tablets (pantallas entre 601px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .player img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .player span {
+    font-size: 11px;
+  }
+
+  .modal-content {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .modal-content img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Escritorio grande opcional (más de 1024px) */
+@media (min-width: 1025px) {
+  .modal-content {
+    width: 40%;
+    max-width: 500px;
+  }
 }
