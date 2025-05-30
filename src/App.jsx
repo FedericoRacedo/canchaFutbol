@@ -128,7 +128,6 @@ export default function App() {
   };
 
   return (
-    <div className="field-wrapper">
     <div className="field" ref={fieldRef}>
       {players.map((player) => (
         <div
@@ -161,7 +160,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </div>
     </div>
   );
 }

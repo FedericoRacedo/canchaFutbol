@@ -1,24 +1,12 @@
-.field-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #000; /* o el color de fondo que prefieras */
-}
-
 .field {
-  aspect-ratio: 4 / 3; /* o 3 / 2, ajustá según tu imagen */
-  width: 90vw;
-  max-width: 800px;
-  background-image: url('../public/imagenesJugadores/cancha.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../imagenesJugadores/cancha.jpg");
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
-
 
 
 .jugadas {
