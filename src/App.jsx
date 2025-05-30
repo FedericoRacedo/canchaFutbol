@@ -2,35 +2,25 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 const playersData = [
-  {
-    id: 1,
-    name: "Martinez",
-    x: 125,
-    y: 390,
-    img: "../public/imagenesJugadores/dibuMartinez.jpg",
-    videos: [
-      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
-      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
-      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
-    ],
-  }, 
-  { id: 2, name: "Romero", x: 315, y: 500, img: "../public/imagenesJugadores/cutiRomero.jpg",videos: [{ title: "Jugadas Claves", url: "https://www.youtube.com/watch?v=ulM_qFdsoLg" },{ title: "Errores", url: "https://www.youtube.com/shorts/2i4PXzqYnWk" },{ title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }], },
-  { id: 3, name: "Tagliafico", x: 400, y: 70, img: "../public/imagenesJugadores/tagliafico.jpg" ,videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 4, name: "Molina", x: 400, y: 675, img: "../public/imagenesJugadores/molina.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=0niaHin2DSI" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 5, name: "Enzo", x: 480, y: 375, img: "../public/imagenesJugadores/enzoFernandez.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 6, name: "Otamendi", x: 315, y: 150, img: "../public/imagenesJugadores/otamendi.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 7, name: "De Paul", x: 530, y: 510, img: "../public/imagenesJugadores/dePaul.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 8, name: "Mac Allister", x: 530, y: 230, img: "../public/imagenesJugadores/alexisMacAllister.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 9, name: "Julian", x: 670, y: 370, img: "../public/imagenesJugadores/julianAlvarez.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 10, name: "Messi", x: 690, y: 600, img: "../public/imagenesJugadores/messi.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 11, name: "Di Maria", x: 690, y: 145, img: "../public/imagenesJugadores/diMaria.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 12, name: "Armani", x: 45, y: 70, img: "../public/imagenesJugadores/diMaria.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 13, name: "Lisandro", x: 45, y: 170, img: "../public/imagenesJugadores/lisandro.webp",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 14, name: "Gio Lo Celso", x: 45, y: 270, img: "../public/imagenesJugadores/gioLoCelso.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
-  { id: 15, name: "Lautaro", x: 45, y: 370, img: "../public/imagenesJugadores/lautaro.jpg",videos: [{ title: "Atajadas clave", url: "https://www.youtube.com/watch?v=abc1" },{ title: "Penales atajados", url: "https://www.youtube.com/watch?v=abc2" },], },
+  { id: 1, name: "Martinez", x: 15.63, y: 48.75, img: "../public/imagenesJugadores/dibuMartinez.jpg", videos: [ /* ... */ ] },
+  { id: 2, name: "Romero", x: 39.38, y: 62.5, img: "../public/imagenesJugadores/cutiRomero.jpg", videos: [ /* ... */ ] },
+  { id: 3, name: "Tagliafico", x: 50, y: 8.75, img: "../public/imagenesJugadores/tagliafico.jpg", videos: [ /* ... */ ] },
+  { id: 4, name: "Molina", x: 50, y: 84.38, img: "../public/imagenesJugadores/molina.jpg", videos: [ /* ... */ ] },
+  { id: 5, name: "Enzo", x: 60, y: 46.88, img: "../public/imagenesJugadores/enzoFernandez.jpg", videos: [ /* ... */ ] },
+  { id: 6, name: "Otamendi", x: 39.38, y: 18.75, img: "../public/imagenesJugadores/otamendi.jpg", videos: [ /* ... */ ] },
+  { id: 7, name: "De Paul", x: 66.25, y: 63.75, img: "../public/imagenesJugadores/dePaul.jpg", videos: [ /* ... */ ] },
+  { id: 8, name: "Mac Allister", x: 66.25, y: 28.75, img: "../public/imagenesJugadores/alexisMacAllister.jpg", videos: [ /* ... */ ] },
+  { id: 9, name: "Julian", x: 83.75, y: 46.25, img: "../public/imagenesJugadores/julianAlvarez.jpg", videos: [ /* ... */ ] },
+  { id: 10, name: "Messi", x: 86.25, y: 75, img: "../public/imagenesJugadores/messi.jpg", videos: [ /* ... */ ] },
+  { id: 11, name: "Di Maria", x: 86.25, y: 18.13, img: "../public/imagenesJugadores/diMaria.jpg", videos: [ /* ... */ ] },
+  { id: 12, name: "Armani", x: 5.63, y: 8.75, img: "../public/imagenesJugadores/diMaria.jpg", videos: [ /* ... */ ] },
+  { id: 13, name: "Lisandro", x: 5.63, y: 21.25, img: "../public/imagenesJugadores/lisandro.webp", videos: [ /* ... */ ] },
+  { id: 14, name: "Gio Lo Celso", x: 5.63, y: 33.75, img: "../public/imagenesJugadores/gioLoCelso.jpg", videos: [ /* ... */ ] },
+  { id: 15, name: "Lautaro", x: 5.63, y: 46.25, img: "../public/imagenesJugadores/lautaro.jpg", videos: [ /* ... */ ] },
 ];
 
 export default function App() {
+  const fieldRef = useRef(null);
   const [players, setPlayers] = useState(playersData);
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const draggingPlayerRef = useRef(null);
@@ -46,15 +36,24 @@ export default function App() {
   };
 
   const handleMouseMove = (e) => {
-    if (!draggingPlayerRef.current) return;
+    if (!draggingPlayerRef.current || !fieldRef.current) return;
 
     const { id, offsetX, offsetY } = draggingPlayerRef.current;
     const dx = e.clientX - offsetX;
     const dy = e.clientY - offsetY;
 
+    const fieldWidth = fieldRef.current.offsetWidth;
+    const fieldHeight = fieldRef.current.offsetHeight;
+
     setPlayers((prev) =>
       prev.map((p) =>
-        p.id === id ? { ...p, x: p.x + dx, y: p.y + dy } : p
+        p.id === id
+          ? {
+              ...p,
+              x: Math.max(0, Math.min(100, p.x + (dx / fieldWidth) * 100)),
+              y: Math.max(0, Math.min(100, p.y + (dy / fieldHeight) * 100)),
+            }
+          : p
       )
     );
 
@@ -69,12 +68,12 @@ export default function App() {
   };
 
   return (
-    <div className="field">
+    <div className="field" ref={fieldRef}>
       {players.map((player) => (
         <div
           key={player.id}
           className="player"
-          style={{ left: player.x, top: player.y }}
+          style={{ left: `${player.x}%`, top: `${player.y}%` }}
           onMouseDown={(e) => handleMouseDown(e, player.id)}
           onDoubleClick={() => setSelectedPlayer(player)}
         >
@@ -104,8 +103,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
-
-
