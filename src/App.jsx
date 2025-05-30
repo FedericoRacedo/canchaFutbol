@@ -2,21 +2,81 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 const playersData = [
-  { id: 1, name: "Martinez", x: 15.63, y: 48.75, img: "../public/imagenesJugadores/dibuMartinez.jpg", videos: [ /* ... */ ] },
-  { id: 2, name: "Romero", x: 39.38, y: 62.5, img: "../public/imagenesJugadores/cutiRomero.jpg", videos: [ /* ... */ ] },
-  { id: 3, name: "Tagliafico", x: 50, y: 8.75, img: "../public/imagenesJugadores/tagliafico.jpg", videos: [ /* ... */ ] },
-  { id: 4, name: "Molina", x: 50, y: 84.38, img: "../public/imagenesJugadores/molina.jpg", videos: [ /* ... */ ] },
-  { id: 5, name: "Enzo", x: 60, y: 46.88, img: "../public/imagenesJugadores/enzoFernandez.jpg", videos: [ /* ... */ ] },
-  { id: 6, name: "Otamendi", x: 39.38, y: 18.75, img: "../public/imagenesJugadores/otamendi.jpg", videos: [ /* ... */ ] },
-  { id: 7, name: "De Paul", x: 66.25, y: 63.75, img: "../public/imagenesJugadores/dePaul.jpg", videos: [ /* ... */ ] },
-  { id: 8, name: "Mac Allister", x: 66.25, y: 28.75, img: "../public/imagenesJugadores/alexisMacAllister.jpg", videos: [ /* ... */ ] },
-  { id: 9, name: "Julian", x: 83.75, y: 46.25, img: "../public/imagenesJugadores/julianAlvarez.jpg", videos: [ /* ... */ ] },
-  { id: 10, name: "Messi", x: 86.25, y: 75, img: "../public/imagenesJugadores/messi.jpg", videos: [ /* ... */ ] },
-  { id: 11, name: "Di Maria", x: 86.25, y: 18.13, img: "../public/imagenesJugadores/diMaria.jpg", videos: [ /* ... */ ] },
-  { id: 12, name: "Armani", x: 5.63, y: 8.75, img: "../public/imagenesJugadores/diMaria.jpg", videos: [ /* ... */ ] },
-  { id: 13, name: "Lisandro", x: 5.63, y: 21.25, img: "../public/imagenesJugadores/lisandro.webp", videos: [ /* ... */ ] },
-  { id: 14, name: "Gio Lo Celso", x: 5.63, y: 33.75, img: "../public/imagenesJugadores/gioLoCelso.jpg", videos: [ /* ... */ ] },
-  { id: 15, name: "Lautaro", x: 5.63, y: 46.25, img: "../public/imagenesJugadores/lautaro.jpg", videos: [ /* ... */ ] },
+  { id: 1, name: "Martinez", x: 15.63, y: 48.75, img: "../public/imagenesJugadores/dibuMartinez.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 2, name: "Romero", x: 39.38, y: 62.5, img: "../public/imagenesJugadores/cutiRomero.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 3, name: "Tagliafico", x: 50, y: 8.75, img: "../public/imagenesJugadores/tagliafico.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 4, name: "Molina", x: 50, y: 84.38, img: "../public/imagenesJugadores/molina.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 5, name: "Enzo", x: 60, y: 46.88, img: "../public/imagenesJugadores/enzoFernandez.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 6, name: "Otamendi", x: 39.38, y: 18.75, img: "../public/imagenesJugadores/otamendi.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 7, name: "De Paul", x: 66.25, y: 63.75, img: "../public/imagenesJugadores/dePaul.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 8, name: "Mac Allister", x: 66.25, y: 28.75, img: "../public/imagenesJugadores/alexisMacAllister.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 9, name: "Julian", x: 83.75, y: 46.25, img: "../public/imagenesJugadores/julianAlvarez.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 10, name: "Messi", x: 86.25, y: 75, img: "../public/imagenesJugadores/messi.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 11, name: "Di Maria", x: 86.25, y: 18.13, img: "../public/imagenesJugadores/diMaria.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 12, name: "Armani", x: 5.63, y: 8.75, img: "../public/imagenesJugadores/diMaria.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 13, name: "Lisandro", x: 5.63, y: 21.25, img: "../public/imagenesJugadores/lisandro.webp", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 14, name: "Gio Lo Celso", x: 5.63, y: 33.75, img: "../public/imagenesJugadores/gioLoCelso.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
+  { id: 15, name: "Lautaro", x: 5.63, y: 46.25, img: "../public/imagenesJugadores/lautaro.jpg", videos: [
+      { title: "Atajadas clave", url: "https://www.youtube.com/watch?v=Ml4p4X2h0Sw" },
+      { title: "Penales atajados", url: "https://www.youtube.com/watch?v=dnkRhVycdIE" },
+      { title: "Partido completo", url: "https://www.youtube.com/watch?v=Vz1ZCLf-_fg" }
+    ], },
 ];
 
 export default function App() {
@@ -68,6 +128,7 @@ export default function App() {
   };
 
   return (
+    <div className="field-wrapper">
     <div className="field" ref={fieldRef}>
       {players.map((player) => (
         <div
@@ -100,6 +161,7 @@ export default function App() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
